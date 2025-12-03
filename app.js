@@ -7,9 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
         placeholder.innerHTML = ''; 
         QrCreator.render({
             text: urlInput.value,
-            radius: 2,
+            radius: 100,
             ecLevel: 'H',
-            fill: '#536DFE',
+            fill: '#000000ff',
             background: null,
             size: 260
         }, placeholder);
