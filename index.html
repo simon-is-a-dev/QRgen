@@ -3,26 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR code generator</title>
+    <title>Advanced QR Code Generator</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <div class="header">
+            <h1><i class="fa-solid fa-qrcode"></i> QR Generator</h1>
+           
+        </div>
 
-        <h1>QR code generator</h1>
-        <!-- image output -->
-        <div class="qrOutput" id="qrOutput">QR Code will appear here</div>
+        <!-- The Output Area -->
+        <div class="qr-wrapper">
+            <!-- Transparency Grid Background -->
+            <div class="qrOutput transparency-grid" id="qrOutput">
+                <div class="placeholder-content">
+                    <i class="fa-regular fa-image"></i>
+                    <p>Enter URL to generate</p>
+                </div>
+            </div>
+        </div>
 
-        <!-- input -->
-        <input type="text" id="urlInput" placeholder="Add your URL here">
-<button id="generateBtn">Create QR Code</button>
+        <!-- Input Area -->
+        <div class="input-group">
+            <label for="urlInput">Content / URL</label>
+            <input type="text" id="urlInput" placeholder="https://example.com" autocomplete="off">
+        </div>
         
-        <!-- download -->
-        <button>Download QR Code</button>
+        <!-- Controls Grid -->
+        <div class="controls-grid">
+            <!-- 1. Color Picker -->
+            <div class="control-card">
+                <label>QR Color</label>
+                <div class="color-picker-wrapper">
+                    <input type="color" id="qrColor" value="#3b82f6">
+                    <span id="qrColorValue">#3b82f6</span>
+                </div>
+            </div>
+            
+            
 
+            <!-- 3. Radius Slider (0 to 50) -->
+            <div class="control-card full-width">
+                <div class="range-header">
+                    <label>Radius Fine-Tuning</label>
+                    <span id="radValue">0</span> <!-- Reads 0 to 50 -->
+                </div>
+                <!-- Min 0, Max 50, Step 1 -->
+                <input type="range" id="rad" name="radius" min="0" max="50" step="1" value="0">
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="action-buttons">
+            <button id="generateBtn" class="btn-primary">Generate QR</button>
+            <button id="downloadBtn" class="btn-secondary" disabled>Download PNG</button>
+        </div>
      </div>  
-<script src="https://unpkg.com/qr-creator/dist/qr-creator.min.js"></script>
 
+<script src="https://unpkg.com/qr-creator/dist/qr-creator.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
