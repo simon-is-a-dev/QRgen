@@ -11,17 +11,18 @@
 
         <h1>QR code generator</h1>
         <!-- image output -->
-        <div class="qrPlaceholder">QR Code will appear here</div>
+        <div class="qrOutput" id="qrOutput">QR Code will appear here</div>
 
         <!-- input -->
-        <input type="text" placeholder="Add your URL here">
-        <button id="urlInput">Create Qr Code</button>
+        <input type="text" id="urlInput" placeholder="Add your URL here">
+<button id="generateBtn">Create QR Code</button>
         
         <!-- download -->
         <button>Download QR Code</button>
 
      </div>  
+<script src="https://unpkg.com/qr-creator/dist/qr-creator.min.js"></script>
 
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
